@@ -1,0 +1,8 @@
+visualize.py
+run --> key 'N' 입력시 20장마다 open_scan 함수 실행
+--> tsdf_scan_whole.py의 open_scan 함수에 rgb, depth, camera_pose 정보 전달
+--> yolact mask, class 정보 추출
+
+fusion_whole.py
+--> integrate 함수 볼것
+

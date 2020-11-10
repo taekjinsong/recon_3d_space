@@ -1,0 +1,29 @@
+[setting]
+cuda --> 10.0 ~ 10.2
+
+conda create -n recon3d python=3.6
+conda activate recon3d
+
+sudo apt install python-pydot python-pydot-ng graphviz
+
+conda install -y pytorch==1.2.0 torchvision==0.4.0
+conda install -y pyqt=5
+conda install -y ipython
+
+pip install cython
+pip install opencv-python opencv-contrib-python pillow pycocotools matplotlib
+pip install numba numpy scikit-image
+pip install vispy
+pip install webcolors sklearn
+pip install pycuda==2018.1.1
+pip install graphviz
+
+cd external/DCNv2
+rm _ext.cpython-*
+rm -r build
+python setup.py build develop
+cd ../..
+
+[test reconstruction performance]
+ipython -i -- main.py --data_root /home/tjsong/data/ --scene lab_kitchen17  --skip_imgs 30 --score_threshold=0.7 --top_k=15
+ipython -i -- main.py --scene scene0000 --is_scannet --trained_model=weights/yolact_plus_resnet50_54_800000.pth --score_threshold=0.7 --top_k=15
