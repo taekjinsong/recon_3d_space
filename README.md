@@ -20,7 +20,7 @@ __2. Your Own Dataset__
 * You can get RGB-D image using realsense camera, and extract camera pose through [ORB SLAM2](https://github.com/raulmur/ORB_SLAM2).
 
 __3. Data composition__
-* Sample Datasets are available to download here [lab_kitchen17](https://drive.google.com/file/d/1pWWgPiP2Cvt7CoiGwxehriP0X2PYCFs1/view?usp=sharing), [scene0000]().
+* Sample Datasets are available to download here [lab_kitchen17](https://drive.google.com/file/d/1pWWgPiP2Cvt7CoiGwxehriP0X2PYCFs1/view?usp=sharing), [scene0000](https://drive.google.com/file/d/1n0_txSI_bH7ioXfeUG4AD2h8YsZSWqqd/view?usp=sharing).
 ```
 .
 +-- data 
@@ -35,6 +35,15 @@ __3. Data composition__
 |   |   +-- pose
 |   |   +-- intrinsic
 ```
+
+__4. Model__
+* Download Yolact pretrained [model](https://drive.google.com/file/d/14J2nsE6ieqOKOJhabKk7D8BNSRK8MNsS/view?usp=sharing) for 2D instance segmentation. We transfer this information to 3D space to make 3D instance semantic masks.
+```
+.
++-- weights 
+|   +-- yolact_plus_resnet50_54_800000.pth
+```
+
 
 
 ## Example of usage
